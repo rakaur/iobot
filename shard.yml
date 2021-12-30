@@ -1,0 +1,13 @@
+name: iobot
+version: 0.1.0
+
+authors:
+  - Eric Will <rakaur@malkier.net>
+
+targets:
+  iobot:
+    main: src/iobot.cr
+
+crystal: 1.2.2
+
+license: MIT
