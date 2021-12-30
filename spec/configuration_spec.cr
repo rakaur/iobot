@@ -14,7 +14,7 @@ describe Configuration do
 
     it "raises exception on a bad file" do
       expect_raises(Configuration::ParseError) do
-        Configuration.new("bad_file")
+        Configuration.new("bad_file").parse
       end
     end
   end

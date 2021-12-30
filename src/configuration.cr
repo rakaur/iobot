@@ -5,17 +5,18 @@ class Configuration
 
   def initialize(file = DEFAULT_FILE)
     @config_file = file
-    @config = nil
-
-    begin
-      @config = YAML.parse(File.read(@config_file))
-    rescue
-      raise Configuration::ParseError.new
-    end
   end
 
-  def config
-    @config
+  def parse
+    @@config = File.open(@config_file) do |file|
+      YAML.parse(file)
+    end.as(YAML::Any)
+  rescue
+    raise Configuration::ParseError.new
+  end
+
+  def self.config
+    @@config
   end
 
   class ParseError < Exception; end

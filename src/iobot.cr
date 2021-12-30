@@ -20,9 +20,12 @@ module Iobot
         puts version
         puts "#{args.all_args.join(", ")}!"
 
-        config = Configuration.new
-        p config
-        p config.config
+        begin
+          Configuration.new.parse
+        rescue e : Configuration::ParseError
+          puts "iobot: configuration error"
+          raise e
+        end
       end
     end
   end
