@@ -1,0 +1,9 @@
+data:
+  string: "foobar"
+  array:
+    - John
+    - Sarah
+  hash: { key: value }
+  paragraph: |
+    foo
+    bar
