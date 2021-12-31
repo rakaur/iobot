@@ -15,3 +15,5 @@ license: MIT
 dependencies:
   clim:
     github: at-grandpa/clim
+  totem:
+    github: icyleaf/totem

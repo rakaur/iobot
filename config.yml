@@ -7,3 +7,13 @@ data:
   paragraph: |
     foo
     bar
+
+uplink:
+  server: "irc.malkier.net"
+  port: 6667
+  password:
+
+irc:
+  nickname: "iobot"
+  username: "iobot"
+  realname: "iobot"
