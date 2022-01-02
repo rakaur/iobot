@@ -36,15 +36,20 @@ module Iobot
           raise exception
         end
 
-        client = Iolite::Client.new(
-          server: config["uplink.server"].as_s?,
-          port: config["uplink.port"].as_i?,
-          password: config["uplink.password"].as_s?,
+        begin
+          client = Iolite::Client.new(
+            server: config["uplink.server"].as_s,
+            port: config["uplink.port"].as_i?,
+            password: config["uplink.password"].as_s?,
 
-          nickname: config["irc.nickname"].as_s?,
-          username: config["irc.username"].as_s?,
-          realname: config["irc.realname"].as_s?
-        )
+            nickname: config["irc.nickname"].as_s?,
+            username: config["irc.username"].as_s?,
+            realname: config["irc.realname"].as_s?
+          )
+        rescue exception
+          puts "iobot: unable to load client; server specified in config?"
+          raise exception
+        end
 
         p client
       end
